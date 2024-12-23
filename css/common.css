@@ -1,0 +1,162 @@
+:root {
+  --background-color: black;
+  --text-color: white;
+  --button-gradient-start: #ff9900;
+  --button-gradient-end: #ff6600;
+  --button-hover-gradient-start: #ff6600;
+  --button-hover-gradient-end: #cc5200;
+  --input-border-color: white;
+  --container-bg-color: #222;
+  --container-border-color: white;
+  --table-border-color: white;
+}
+
+/* 通用設定 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--button-gradient-start);
+  margin: 20px 0;
+}
+
+/* 通用按鈕 */
+button {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, var(--button-gradient-start), var(--button-gradient-end));
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, var(--button-hover-gradient-start), var(--button-hover-gradient-end));
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 通用輸入框 */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 3px solid var(--input-border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--text-color);
+  color: var(--background-color);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--button-gradient-start);
+  box-shadow: 0 0 8px rgba(255, 153, 0, 0.8);
+}
+
+/* 容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--container-border-color);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  background-color: var(--container-bg-color);
+  padding: 30px;
+}
+
+/* 表格通用 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-color);
+}
+
+table td, table th {
+  padding: 10px;
+  border: 2px solid var(--table-border-color);
+  text-align: center;
+}
+
+/* 漢堡選單 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.navbar.active {
+  transform: translateX(0);
+}
+
+/* LOGO */
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff9900;
+  margin-bottom: 20px;
+}
+
+/* 導覽列連結 */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px 0;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #ff6600;
+}
+
+/* 漢堡按鈕樣式 */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 10px;
+  font-size: 24px;
+  color: #ff9900;
+  cursor: pointer;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}

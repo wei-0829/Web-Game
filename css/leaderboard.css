@@ -1,0 +1,103 @@
+.main-content {
+  width: 100%;
+  max-width: 600px; /* 限制內容最大寬度 */
+  margin: 0 auto; /* 置中 */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.container {
+  border: 3px solid #ff6600; /* 橘色邊框 */
+  border-radius: 8px; /* 圓角邊框 */
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+.leaderboard {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  color: black;
+}
+
+table th {
+  background-color: #f4f4f4;
+  color: black;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.leaderboard-buttons {
+  display: flex;
+  justify-content: center; /* 按鈕置中 */
+  gap: 20px; /* 按鈕之間的間距 */
+  margin-top: 20px; /* 按鈕與表格之間的間距 */
+}
+
+.leaderboard-buttons button {
+  padding: 15px 30px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.leaderboard-buttons button:hover {
+  background: linear-gradient(45deg, #ff6600, #cc5200);
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+  .main-content {
+    width: 100%;
+    max-width: 100%; /* 確保內容區域填滿螢幕 */
+    padding: 10px;
+  }
+
+  .container {
+    max-width: 100%; /* 確保容器不會超出螢幕 */
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .leaderboard-buttons {
+    flex-direction: column; /* 讓按鈕垂直排列 */
+    gap: 15px; /* 調整按鈕間距 */
+    margin-top: 20px;
+  }
+
+  .leaderboard-buttons button {
+    width: 100%; /* 讓按鈕寬度佔滿容器 */
+    max-width: 300px; /* 設定最大寬度，避免過寬 */
+    padding: 12px 20px; /* 增加按鈕的內邊距 */
+    font-size: 14px; /* 減小字體大小以適應小螢幕 */
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleCasino - 登入</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Casino Games</div>
+    <a href="index.html">Login</a>
+    <a href="settings.html">Setting</a>
+    <a href="pckg.html">Pachinko Machine</a>
+    <a href="slot.html">Slot Machine</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </div>
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  
+  
+  <div class="main-content">
+    <div class="container">
+      <div id="loginContainer">
+        <h2>登入系統</h2>
+        <form id="loginForm">
+          <input type="text" id="loginUsername" name="username" placeholder="輸入帳號" required>
+          <input type="password" id="loginPassword" name="password" placeholder="輸入密碼" required>
+          <button type="submit">登入</button>
+          <div id="loginErrorMessage" class="error">帳號或密碼不可為空！</div>
+        </form>
+        <div class="footer">
+          沒有帳號？<a href="#" onclick="toggleForm('register')">註冊</a>
+        </div>
+      </div>
+      <div id="registerContainer" style="display: none;">
+        <h2>註冊系統</h2>
+        <form id="registerForm">
+          <input type="text" id="registerUsername" name="username" placeholder="輸入帳號" required>
+          <input type="password" id="registerPassword" name="password" placeholder="輸入密碼" required>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="確認密碼" required>
+          <button type="submit">註冊</button>
+          <div id="registerErrorMessage" class="error">所有欄位均為必填，且密碼需一致！</div>
+        </form>
+        <div class="footer">
+          已有帳號？<a href="#" onclick="toggleForm('login')">登入</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 簡報圖片連結 -->
+  <a href="https://docs.google.com/presentation/d/1p9jYOVf8WVT_xqlTvQtVtZp9Ly6J0UJhSZExNyLPZ5g/edit#slide=id.g32625852aa8_0_280" target="_blank" id="presentationLink">
+    <img src="image/ppt.PNG" alt="簡報" id="presentationImage">
+  </a>
+
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initializeStyle(); // 確保載入儲存的樣式
+    });
+  </script>
+</body>
+</html>

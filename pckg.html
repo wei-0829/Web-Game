@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pachinko Machine</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/pckg.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Casino Games</div>
+    <a href="index.html">Login</a>
+    <a href="settings.html">Setting</a>
+    <a href="pckg.html">Pachinko Machine</a>
+    <a href="slot.html">Slot Machine</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </div>
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <div class="main-content">
+    <div class="container">
+      <canvas id="gameCanvas" width="500" height="800"></canvas>
+      <div id="scorePanel">
+        <table>
+          <tr>
+            <td>Balls：<span id="currentBalls"></span></td>
+            <td>Credits：<span id="currentPoints"></span></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div id="ballSpeedContainer">
+                <button id="increaseSpeed">Ball Speed +</button>
+                <button id="decreaseSpeed">Ball Speed -</button>
+              </div>
+              <p>Speed：<span id="ballSpeed"></span> Ball/Sec (0-5)</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <p>50 Credits : 1 Ball</p>
+              <p>Max Balls can switch：<span id="maxExchange">1000</span></p>
+              <div id="exchangeButtons">
+                <button data-balls="10">+10 balls</button>
+                <button data-balls="50">+50 balls</button>
+                <button data-balls="100">+100 balls</button>
+                <button data-balls="500">+500 balls</button>
+                <button data-balls="all">All Switch</button>
+              </div>              
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div id="gotoButtons">
+                <button id="lobby" class="goto-lobby-leaderboard">LOBBY</button> <!-- 新增 -->
+                <button id="leaderboard" class="goto-lobby-leaderboard">LEADERBOARD</button> <!-- 新增 -->
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="js/common.js"></script>
+  <script src="js/pckg.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initializeStyle(); // 確保載入儲存的樣式
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>快速切換風格與遊戲 - Settings</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Casino Games</div>
+    <a href="index.html">Login</a>
+    <a href="settings.html">Setting</a>
+    <a href="pckg.html">Pachinko Machine</a>
+    <a href="slot.html">Slot Machine</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </div>
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <div class="main-content">
+    <div class="container">
+      <!-- 左側：玩家資訊 -->
+      <div class="left-section">
+        <h1>玩家資訊</h1>
+        <div id="playerInfo">
+          <p>帳號名稱：<span id="playerName">玩家1</span></p>
+          <p>分數：<span id="playerScore">0</span></p>
+          <p>擁有球數：<span id="playerBalls">0</span></p>
+        </div>
+        <div class="player-actions">
+          <button id="addPoints">加值</button>
+          <button id="logout">登出</button>
+        </div>
+      </div>
+      <!-- 右側：切換風格與選擇遊戲 -->
+      <div class="right-section">
+        <h1>快速切換風格</h1>
+        <div class="style-buttons">
+          <div class="row">
+            <button id="darkStyle">深色風格</button>
+            <button id="lightStyle">淺色風格</button>
+          </div>
+          <div class="row">
+            <button id="pinkStyle">粉色風格</button>
+            <button id="blueStyle">藍色風格</button>
+            <button id="lightGreenStyle">淺綠風格</button>
+          </div>
+        </div>        
+        <h1>選擇遊戲</h1>
+        <div class="game-buttons">
+          <button id="goPachinko">Pachinko Machine</button>
+          <button id="goSlotMachine">Slot Machine</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/common.js"></script>
+  <script src="js/settings.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initializeStyle(); // 確保載入儲存的樣式
+
+      // 更新玩家資訊
+      document.getElementById("playerName").textContent = localStorage.getItem("username") || "未知玩家";
+      document.getElementById("playerScore").textContent = getPlayerScore();
+      document.getElementById("playerBalls").textContent = getPlayerBalls();
+    });
+  </script>
+</body>
+</html>

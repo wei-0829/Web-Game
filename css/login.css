@@ -1,0 +1,49 @@
+.form-container {
+  width: 400px;
+  padding: 30px 40px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form-container .error {
+  color: red;
+  font-size: 13px;
+  margin-top: 10px;
+  display: none;
+}
+
+.form-container .footer {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.form-container .footer a {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+.form-container .footer a:hover {
+  text-decoration: underline;
+}
+
+#presentationLink {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* 確保圖片在最上層 */
+}
+
+#presentationImage {
+  width: 100px; /* 調整為您希望的圖片大小 */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#presentationImage:hover {
+  transform: scale(1.1); /* 滑鼠懸停時放大圖片 */
+}

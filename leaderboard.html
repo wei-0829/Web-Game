@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分數榜 - Leaderboard</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+<body>
+  
+  <div class="navbar">
+    <div class="logo">Casino Games</div>
+    <a href="index.html">Login</a>
+    <a href="settings.html">Setting</a>
+    <a href="pckg.html">Pachinko Machine</a>
+    <a href="slot.html">Slot Machine</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </div>
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <div class="main-content">
+    <div class="container">
+      <h1>分數榜</h1>
+      <div class="leaderboard">
+        <table>
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th>玩家名稱</th>
+              <th>分數</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardTable">
+            <!-- 資料由 JavaScript 動態生成 -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 新增的按鈕區域 -->
+      <div class="leaderboard-buttons">
+        <button onclick="window.location.href='settings.html'">Settings</button>
+        <button onclick="window.location.href='pckg.html'">Pachinko Machine</button>
+        <button onclick="window.location.href='slot.html'">Slot Machine</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

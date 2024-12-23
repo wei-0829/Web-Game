@@ -1,0 +1,206 @@
+.main-content {
+  width: 100%;
+  max-width: 900px; /* 限制內容最大寬度 */
+  margin: 0 auto; /* 置中 */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.container {
+  flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box; /* Prevents padding and margin from affecting layout */
+}
+
+.slot-machine {
+  margin: 50px auto;
+  width: 100%; /* 改為自適應寬度 */
+  max-width: 700px; /* 限制最大寬度 */
+  padding: 20px;
+  position: relative; /* 確保 win-message 相對於這個容器定位 */
+  box-sizing: border-box; /* 確保邊框和內邊距不影響寬度 */
+}
+
+#win-message {
+  position: absolute;
+  top: -30px; /* 控制顯示文字的位置，可以根據需要調整 */
+  left: 50%;
+  transform: translateX(-50%); /* 居中對齊 */
+  font-size: 24px;
+  color: gold; /* 設置顏色 */
+  opacity: 0; /* 預設隱藏 */
+  visibility: hidden; /* 預設不顯示 */
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* 淡入效果 */
+  white-space: nowrap; /* 禁止換行 */
+}
+
+#win-message.show {
+  opacity: 1; /* 顯示時 */
+  visibility: visible;
+  transition: opacity 0.3s ease; /* 淡入效果 */
+}
+
+.reels {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.reel {
+  width: 150px;
+  height: 200px;
+  margin: 0 15px;
+  border: 3px solid #fff;
+  background-color: white;
+  color: black;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.gotobuttons {
+  display: flex;
+  gap: 10px;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid white;
+}
+
+#bet-one,
+#bet-max,
+#bet-minus,
+#spin {
+  padding: 20px 40px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#bet-one:hover,
+#bet-max:hover,
+#bet-minus:hover,
+#spin:hover {
+  background: linear-gradient(45deg, #ff6600, #cc5200);
+}
+
+.goto-lobby-leaderboard {
+  padding: 20px 40px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goto-lobby-leaderboard:hover {
+  background: linear-gradient(45deg, #ff6600, #cc5200);
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+  .slot-machine {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .reels {
+    flex-direction: row;
+    justify-content: center; /* 保持內容居中 */
+    margin: 10px 0;
+    gap: 15px; /* 每個 .reel 之間的間距 */
+  }
+
+  .reel {
+    width: 100%;
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .status {
+    font-size: 18px;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 按鈕水平居中 */
+    justify-content: center; /* 按鈕垂直居中 */
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box; /* 防止超出容器 */
+  }
+
+  /* 調整每個按鈕 */
+  button {
+    width: 80%; /* 讓按鈕寬度占據80% */
+    max-width: 300px; /* 設定最大寬度，防止過寬 */
+    font-size: 14px;
+    padding: 10px;
+    text-align: center; /* 確保文字居中 */
+    display: flex; /* 設置為 flex 以便居中對齊 */
+    justify-content: center; /* 確保文字水平方向居中 */
+    align-items: center; /* 確保文字垂直方向居中 */
+    box-sizing: border-box; /* 確保內邊距和邊框不影響寬度 */
+    overflow: hidden; /* 確保文字不會超出按鈕 */
+  }
+
+  .game-buttons {
+    flex-direction: column; /* 按鈕垂直排列 */
+    gap: 10px; /* 每個按鈕間距 */
+    align-items: center; /* 按鈕水平居中 */
+  }
+
+  .gotobuttons {
+    flex-direction: column; /* 按鈕垂直排列 */
+    gap: 10px; /* 每個按鈕間距 */
+    align-items: center; /* 按鈕水平居中 */
+  }
+}
+

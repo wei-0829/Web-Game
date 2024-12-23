@@ -1,0 +1,157 @@
+.main-content {
+  margin: 0 auto; /* 置中 */
+  padding: 10px;
+  width: 100%;
+  width: 1200px;
+}
+
+.container {
+  flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box; /* Prevents padding and margin from affecting layout */
+}
+
+#gameCanvas {
+  width: 100%;
+  flex: 0 0 500px;
+  border: 3px solid white;
+  background-color: #111;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  box-sizing: border-box; /* 確保邊框和內邊距不影響寬度 */
+}
+
+#scorePanel {
+  width: 100%;
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 10px;
+  background-color: #222;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+#scorePanel table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0;
+}
+
+#scorePanel td {
+  width: 100%;
+  border: 2px solid white;
+  padding: 10px;
+}
+
+#ballSpeedContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+#exchangeButtons  {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+#exchangeButtons button {
+  width: 100%;
+  flex: 1;
+}
+
+#gotoButtons {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.goto-lobby-leaderboard {
+  width: 100%;
+  padding: 20px 40px;
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goto-lobby-leaderboard:hover {
+  width: 100%;
+  background: linear-gradient(45deg, #ff6600, #cc5200);
+}
+
+@media (max-width: 1120px) { /* RWD響應式設定 */
+  
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%; /* 確保容器寬度100% */
+  }
+
+  #gameCanvas {
+    width: 90%; /* 讓遊戲畫布隨著容器的大小縮小 */
+    height: auto;
+  }
+
+  #scorePanel {
+    width: 90%; /* 讓分數面板隨著容器的大小縮小 */
+  }
+
+  #scorePanel table {
+    width: 100%; /* 讓表格寬度100%匹配容器大小 */
+    table-layout: fixed; /* 設置表格的佈局為固定，使列寬均勻分配 */
+  }
+
+  #scorePanel td {
+    width: 33%; /* 讓每個單元格佔據表格的三分之一 */
+    padding: 8px; /* 減小單元格內邊距 */
+    word-wrap: break-word; /* 允許文字換行 */
+  }
+
+  /* 調整按鈕容器 */
+  #exchangeButtons, #gotoButtons, #ballSpeedContainer {
+    width: 90%; /* 讓按鈕容器寬度適應容器大小 */
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 按鈕垂直排列 */
+    gap: 10px; /* 按鈕之間保持一定間隔 */
+    justify-content: center; /* 按鈕容器內的按鈕垂直居中 */
+    align-items: center; /* 按鈕容器內的按鈕水平居中 */
+    margin: 0 auto; /* 確保容器水平居中 */
+  }
+
+  #exchangeButtons button, #gotoButtons button, #ballSpeedContainer button {
+    width: 100%; /* 讓每個按鈕寬度100%匹配容器寬度 */
+    max-width: 300px; /* 設定最大寬度以防止過寬 */
+    padding: 10px; /* 增加按鈕的內邊距，讓它們更易於點擊 */
+    font-size: 14px; /* 根據需要調整字體大小 */
+  }
+}

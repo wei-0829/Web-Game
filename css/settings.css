@@ -1,0 +1,115 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  background-color: #222;
+  border: 3px solid white;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* 左側 */
+.left-section {
+  flex: 1;
+  background-color: #333;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+}
+
+.left-section h1 {
+  color: #ff9900;
+  margin-bottom: 20px;
+}
+
+.left-section p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* 右側 */
+.right-section {
+  flex: 1;
+  background-color: #333;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.right-section h1 {
+  color: #ff9900;
+  margin-bottom: 20px;
+}
+
+.style-buttons,
+.game-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.style-buttons .row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px; /* 增加行間距 */
+}
+
+button {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff6600, #cc5200);
+}
+
+/* 左側按鈕 */
+.player-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.player-actions button {
+  width: 100px;
+  font-size: 14px;
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+  .left-section,
+  .right-section {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .style-buttons,
+  .game-buttons {
+    gap: 8px;
+  }
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

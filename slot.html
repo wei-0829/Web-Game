@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleCasino - Slot Machine</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/slot.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Casino Games</div>
+    <a href="index.html">Login</a>
+    <a href="settings.html">Setting</a>
+    <a href="pckg.html">Pachinko Machine</a>
+    <a href="slot.html">Slot Machine</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </div>
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="slot-machine">
+
+        <div id="win-message" class="win-message"></div>
+
+        <div class="reels">
+          <div class="reel" id="reel1">7</div>
+          <div class="reel" id="reel2">7</div>
+          <div class="reel" id="reel3">7</div>
+        </div>
+        <div class="status">
+          <div>Winner Paid: <span id="winner-paid"></span></div>
+          <div>Credits: <span id="credits"></span></div>
+          <div>Coin Played: <span id="coin-played"></span></div>
+        </div>
+        <div class="buttons">
+          <div class="game-buttons">
+            <button id="bet-minus">Bet Minus</button>
+            <button id="bet-one">Bet One</button>
+            <button id="bet-max">Bet Max</button>
+            <button id="spin">Spin Reels</button>
+          </div>
+          <hr class="divider">
+          <div class="gotobuttons">
+            <button id="lobby" class="goto-lobby-leaderboard">LOBBY</button>
+            <button id="leaderboard" class="goto-lobby-leaderboard">LEADERBOARD</button>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <audio id="spin-sound" src="sound/slot-spin-sound.mp3" preload="auto"></audio>
+
+  <script src="js/common.js"></script>
+  <script src="js/slot.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initializeStyle(); // 確保載入儲存的樣式
+    });
+  </script>
+</body>
+</html>
